@@ -43,32 +43,16 @@ export default class App extends Component {
   };
   addItem = (text) => {
     this.setState(({ todoData }) => {
-      const newItem = this.createTodoItem("New Item");
+      const newItem = this.createTodoItem(text);
       const newData = [...todoData, newItem];
       return { todoData: newData };
     });
   };
   onToggleImportant = (id) => {
     this.toggleProperty(id, "important");
-    //this.setState(({ todoData }) => {
-    //  const newData = todoData.map((item) => {
-    //    return item.id === id ? { ...item, important: !item.important } : item;
-    //  });
-    //  return {
-    //    todoData: newData,
-    //  };
-    //});
   };
   onToggleDone = (id) => {
     this.toggleProperty(id, "done");
-    //this.setState(({ todoData }) => {
-    //  const newData = todoData.map((item) => {
-    //    return item.id === id ? { ...item, done: !item.done } : item;
-    //  });
-    //  return {
-    //    todoData: newData,
-    //  };
-    //});
   };
 
   render() {
